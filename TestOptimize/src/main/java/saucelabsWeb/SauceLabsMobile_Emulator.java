@@ -26,7 +26,7 @@ public class SauceLabsMobile_Emulator
 		caps.setCapability("build", "SnapDeal"); //
 		caps.setCapability("platformVersion","8.1");
 		caps.setCapability("platformName","Android");
-		caps.setCapability("app","https://github.com/Sofia832/apkFile/releases/download/2.2.1/Android.SauceLabs.Mobile.Sample.app.2.2.0.apk");
+		caps.setCapability("	","https://github.com/Sofia832/apkFile/releases/download/2.2.1/Android.SauceLabs.Mobile.Sample.app.2.2.0.apk");
 		
 		AppiumDriver<MobileElement> driver = null;
 		try 

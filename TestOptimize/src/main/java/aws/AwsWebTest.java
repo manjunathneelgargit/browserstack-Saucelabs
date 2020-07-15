@@ -1,36 +1,42 @@
-package browserStack;
-//Saucelabs
-//Browserstack
-//aws
+package aws;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
 import java.net.URL;
-
-public class BrowserStackWeb 
+/*
+ * Run test on AWs Chrome 
+ */
+public class AwsWebTest 
 {
 
-  public static final String USERNAME = "david3611";//david3612
-  public static final String ACCESSKEY = "6wNpAR65i43nknsonABU";//LL3xQVwwbwjxGAs2XGSM
-  public static final String URL = "https://" + USERNAME + ":" + ACCESSKEY + "@hub-cloud.browserstack.com/wd/hub";
-  
-//  https://david3611:david3611@hub-cloud.browserstack.com/wd/hub
 
   public static void main(String[] args) throws Exception 
   {
     DesiredCapabilities caps = new DesiredCapabilities();
+
     caps.setCapability("browser", "Chrome");
-    caps.setCapability("browser_version", "83.0");
+    caps.setCapability("browser_version", "83.0.4103.116");
+
     caps.setCapability("os", "Windows");
     caps.setCapability("os_version", "8.1");
-    caps.setCapability("name", "Test Case for BrowserStack Web");
+    caps.setCapability("resolution", "1024x768");
+    caps.setCapability("name", "Test Case for AWS Web");
+    
+    ChromeOptions options = new ChromeOptions();
+    caps.setCapability(ChromeOptions.CAPABILITY, options);
 
-    WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+   RemoteWebDriver driver = new RemoteWebDriver(new URL("http://18.218.236.101:4444/wd/hub"), caps);
     driver.get("http://www.google.com");
+    
     WebElement element = driver.findElement(By.name("q"));
 
     element.sendKeys("BrowserStack");
@@ -38,6 +44,7 @@ public class BrowserStackWeb
 
     System.out.println(driver.getTitle());
     driver.quit();
+    
 
   }
 }
