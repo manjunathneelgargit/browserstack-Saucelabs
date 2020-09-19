@@ -13,8 +13,8 @@ import io.appium.java_client.android.AndroidElement;
 
 public class SauceLabsMobile_Emulator 
 {
-	public static final String USERNAME = "manjunathneelgar";//david3612
-	public static final String AUTOMATE_KEY = "aa10bd5f-ee48-4523-845a-a6363501e108";//LL3xQVwwbwjxGAs2XGSM
+	public static final String USERNAME = "lemaxdavid";//david3612
+	public static final String AUTOMATE_KEY = "24ed46a9-9bac-4e62-8b20-8247a5a7ccd2";//LL3xQVwwbwjxGAs2XGSM
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 	public static void main(String[] args) 
 	{
@@ -26,7 +26,7 @@ public class SauceLabsMobile_Emulator
 		caps.setCapability("build", "SnapDeal"); //
 		caps.setCapability("platformVersion","8.1");
 		caps.setCapability("platformName","Android");
-		caps.setCapability("	","https://github.com/Sofia832/apkFile/releases/download/2.2.1/Android.SauceLabs.Mobile.Sample.app.2.2.0.apk");
+		caps.setCapability("app","https://github.com/Sofia832/apkFile/releases/download/2.2.1/Android.SauceLabs.Mobile.Sample.app.2.2.0.apk");
 		
 		AppiumDriver<MobileElement> driver = null;
 		try 

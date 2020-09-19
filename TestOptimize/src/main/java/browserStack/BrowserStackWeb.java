@@ -27,9 +27,10 @@ public class BrowserStackWeb
     caps.setCapability("browser_version", "83.0");
     caps.setCapability("os", "Windows");
     caps.setCapability("os_version", "8.1");
-    caps.setCapability("name", "Test Case for BrowserStack Web");
+    caps.setCapability("name", "Regression");
 
     WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+    //Script
     driver.get("http://www.google.com");
     WebElement element = driver.findElement(By.name("q"));
 

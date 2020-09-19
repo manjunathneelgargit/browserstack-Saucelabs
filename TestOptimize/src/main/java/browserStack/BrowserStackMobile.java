@@ -14,7 +14,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BrowserStackMobile 
 {
-
 	public static String userName = "david3611";
 	public static String accessKey = "6wNpAR65i43nknsonABU";
 
@@ -24,11 +23,11 @@ public class BrowserStackMobile
 
 		caps.setCapability("device", "Google Pixel 3");
 		caps.setCapability("os_version", "9.0");
-		caps.setCapability("project", "SnapDeal"); //Project Name
-		caps.setCapability("build", "My First Build"); //Build Name
+		caps.setCapability("project", "My New SnapDeal Project"); //Project Name
+		caps.setCapability("build", "My First Build - Regression"); //Build Name
 		caps.setCapability("browserstac.debug", "true");
 		caps.setCapability("name", "Bstack-[Java] Sample Test"); //Test Name
-		caps.setCapability("app", "bs://9b89fd7f4f2505276e24de38459d6c3299ae7c89");
+		caps.setCapability("app", "bs://6c1db3564f4b84d01396ff5416c90069cabf31d4");
 
 		AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -40,7 +39,6 @@ public class BrowserStackMobile
 			driver.findElementById("com.snapdeal.main:id/search_edit_text").sendKeys("Reebok");
 			driver.findElementByXPath("(//android.widget.FrameLayout[@resource-id='android:id/content']/descendant::android.widget.LinearLayout)[1]").click();
 			driver.findElementById("com.snapdeal.main:id/negativeBtnView").click();
-
 		} 
 		catch (Exception e) 
 		{

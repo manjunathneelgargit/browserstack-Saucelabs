@@ -26,7 +26,7 @@ public class SauceLabsMobile_RealDevices
 	    caps.setCapability("appiumVersion", "1.17.1");
 	    caps.setCapability("noReset", "false");
 	    //caps.setCapability("cacheId", "1732807cb06");
-	    caps.setCapability("testobject_session_creation_timeout", "900000");
+//	    caps.setCapability("testobject_session_creation_timeout", "900000");
 	    caps.setCapability("testobject_app_id", "1");
 	    caps.setCapability("testobject_suite_name", "Default Appium Suite");
 	    caps.setCapability("testobject_test_name", "Default Appium Test");

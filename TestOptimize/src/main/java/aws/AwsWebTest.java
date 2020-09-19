@@ -17,34 +17,30 @@ import java.net.URL;
  */
 public class AwsWebTest 
 {
+	public static void main(String[] args) throws Exception 
+	{
+		DesiredCapabilities caps = new DesiredCapabilities();
 
+		caps.setCapability("browser", "Chrome");
+		caps.setCapability("browser_version", "83.0.4103.116");
 
-  public static void main(String[] args) throws Exception 
-  {
-    DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("os", "Windows");
+		caps.setCapability("os_version", "8.1");
+		caps.setCapability("resolution", "1024x768");
+		caps.setCapability("name", "Test Case for AWS Web");
 
-    caps.setCapability("browser", "Chrome");
-    caps.setCapability("browser_version", "83.0.4103.116");
+		ChromeOptions options = new ChromeOptions();
+		caps.setCapability(ChromeOptions.CAPABILITY, options);
 
-    caps.setCapability("os", "Windows");
-    caps.setCapability("os_version", "8.1");
-    caps.setCapability("resolution", "1024x768");
-    caps.setCapability("name", "Test Case for AWS Web");
-    
-    ChromeOptions options = new ChromeOptions();
-    caps.setCapability(ChromeOptions.CAPABILITY, options);
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://18.218.236.101:4444/wd/hub"), caps);
+		driver.get("http://www.google.com");
 
-   RemoteWebDriver driver = new RemoteWebDriver(new URL("http://18.218.236.101:4444/wd/hub"), caps);
-    driver.get("http://www.google.com");
-    
-    WebElement element = driver.findElement(By.name("q"));
+		WebElement element = driver.findElement(By.name("q"));
 
-    element.sendKeys("BrowserStack");
-    element.submit();
+		element.sendKeys("BrowserStack");
+		element.submit();
 
-    System.out.println(driver.getTitle());
-    driver.quit();
-    
-
-  }
+		System.out.println(driver.getTitle());
+		driver.quit();
+	}
 }
