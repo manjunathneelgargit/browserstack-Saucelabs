@@ -23,7 +23,6 @@ public class AwsWebTest
 
 		caps.setCapability("browser", "Chrome");
 		caps.setCapability("browser_version", "83.0.4103.116");
-
 		caps.setCapability("os", "Windows");
 		caps.setCapability("os_version", "8.1");
 		caps.setCapability("resolution", "1024x768");
